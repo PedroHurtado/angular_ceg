@@ -12,7 +12,8 @@ export class Calendar {
 
   @HostListener('click', ['$event'])
   handlerClick(ev:Event){
-    const {dataset} = (ev.target as HTMLElement)
+    ev.stopPropagation()
+    const {dataset} = (ev.target as HTMLElement) || {}
     const {index} = dataset || {}
     if(index){
       console.log(this.days[Number(index)])
