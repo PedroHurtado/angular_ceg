@@ -1,0 +1,28 @@
+.timer-card {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: max-content;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.time {
+  font-size: 4rem;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.date {
+  font-size: 1.5rem;
+  color: #666;
+}
