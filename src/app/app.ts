@@ -8,7 +8,7 @@ import { Parent as ParentContent  } from './content/parent/parent'
   selector: 'app-root',
   imports: [Calendar, Parent, ParentContent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   name="Pedro Hurtado"
