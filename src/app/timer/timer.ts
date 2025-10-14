@@ -9,6 +9,7 @@ import { Component, signal, inject, DestroyRef, effect, computed } from '@angula
 export class Timer {
   private destroyRef = inject(DestroyRef);
   currentDate = signal(new Date());
+
   date = computed(() =>
     this.currentDate().toLocaleDateString(
       'es-ES', {
@@ -18,7 +19,9 @@ export class Timer {
       day: 'numeric'
     })
   )
+
   time=computed(()=>this.currentDate().toLocaleTimeString("es-ES"))
+
   constructor() {
     effect(() => {
       console.log('Timer actualizado:', this.currentDate());
