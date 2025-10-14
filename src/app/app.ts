@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Calendar } from './calendar/calendar';
+import { Parent } from './input/parent/parent';
 
 @Component({
   selector: 'app-root',
-  imports: [Calendar],
+  imports: [Calendar, Parent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

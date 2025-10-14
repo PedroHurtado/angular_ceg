@@ -1,0 +1,4 @@
+<button (click)="changeData()">ChangeData</button>
+@for (item of data; track item) {
+  <app-child [value]="item" (page)="changePage($event)" />
+}
