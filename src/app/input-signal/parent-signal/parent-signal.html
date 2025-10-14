@@ -1,0 +1,4 @@
+<button (click)="changeData()">Change Signal Data</button>
+@for (item of data(); track item) {
+  <app-child-signal [value]="item" (page)="changePage($event)" />
+}

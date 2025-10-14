@@ -24,7 +24,7 @@ export class Timer {
 
   constructor() {
     effect(() => {
-      console.log('Timer actualizado:', this.currentDate());
+      //console.log('Timer actualizado:', this.currentDate());
     });
 
     const intervalId = setInterval(() => {

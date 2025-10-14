@@ -5,10 +5,11 @@ import { Parent } from './input/parent/parent';
 import { Parent as ParentContent  } from './content/parent/parent'
 import { Counter } from './counter/counter';
 import { Timer } from './timer/timer';
+import { ParentSignal } from './input-signal/parent-signal/parent-signal';
 
 @Component({
   selector: 'app-root',
-  imports: [Calendar, Parent, ParentContent,Counter, Timer],
+  imports: [Calendar, Parent, ParentContent,Counter, Timer, ParentSignal],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
