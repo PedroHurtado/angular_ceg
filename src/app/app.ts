@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { Calendar } from './calendar/calendar';
 import { Parent } from './input/parent/parent';
 import { Parent as ParentContent  } from './content/parent/parent'
+import { Counter } from './counter/counter';
 
 @Component({
   selector: 'app-root',
-  imports: [Calendar, Parent, ParentContent],
+  imports: [Calendar, Parent, ParentContent,Counter],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
