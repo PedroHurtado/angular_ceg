@@ -1,14 +1,9 @@
 <div class="timer-card">
   <h1>Timer en Tiempo Real</h1>
   <div class="time">
-    {{ currentDate().toLocaleTimeString('es-ES') }}
+    {{time()}}
   </div>
   <div class="date">
-    {{ currentDate().toLocaleDateString('es-ES', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-    }) }}
+    {{date()}}
   </div>
 </div>

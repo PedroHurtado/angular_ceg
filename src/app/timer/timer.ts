@@ -1,4 +1,4 @@
-import { Component, signal, inject, DestroyRef, effect } from '@angular/core';
+import { Component, signal, inject, DestroyRef, effect, computed } from '@angular/core';
 
 @Component({
   selector: 'app-timer',
@@ -9,7 +9,17 @@ import { Component, signal, inject, DestroyRef, effect } from '@angular/core';
 export class Timer {
   currentDate = signal(new Date());
   private destroyRef = inject(DestroyRef);
-
+  date = computed(() =>
+    this.currentDate().toLocaleDateString(
+      'es-ES', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }
+    )
+  )
+  time=computed(()=>this.currentDate().toLocaleTimeString("es-ES"))
   constructor() {
     effect(() => {
       console.log('Timer actualizado:', this.currentDate());
