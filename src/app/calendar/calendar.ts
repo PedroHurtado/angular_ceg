@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-
+import { CalendarDay, generateCalendar } from './calendat-service';
 @Component({
   selector: 'app-calendar',
   imports: [],
@@ -7,7 +7,8 @@ import { Component, HostListener } from '@angular/core';
   styleUrl: './calendar.css'
 })
 export class Calendar {
-  days: number[] = [...Array(31).keys()].map(i => i + 1);
+  //days:number [] = [...Array(31).keys()].map(i => i + 1);
+  days:CalendarDay [] = [...generateCalendar()]
 
   @HostListener('click', ['$event'])
   handlerClick(ev:Event){
