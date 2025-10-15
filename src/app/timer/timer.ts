@@ -1,8 +1,9 @@
 import { Component, signal, inject, DestroyRef, effect, computed } from '@angular/core';
+import { TimepipePipe } from './timepipe-pipe';
 
 @Component({
   selector: 'app-timer',
-  imports: [],
+  imports: [TimepipePipe],
   templateUrl: './timer.html',
   styleUrl: './timer.css'
 })
@@ -20,7 +21,7 @@ export class Timer {
     })
   )
 
-  time=computed(()=>this.currentDate().toLocaleTimeString("es-ES"))
+  //time=computed(()=>this.currentDate().toLocaleTimeString("es-ES"))
 
   constructor() {
     effect(() => {
