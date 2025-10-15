@@ -1,0 +1,7 @@
+.control{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: max-content;
+  padding-bottom: 1rem;
+}
