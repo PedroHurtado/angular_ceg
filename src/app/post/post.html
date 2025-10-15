@@ -1,0 +1,18 @@
+<ul>
+  @for (element of elements; track element) {
+    <li>{{element}}</li>
+  }
+</ul>
+
+@defer (on viewport) {
+  <app-postcoments />
+}
+@loading {
+  <div>Loading...</div>
+}
+@error {
+  <div>Se ha producido un error</div>
+}
+@placeholder {
+  <div>Large component placeholder</div>
+}

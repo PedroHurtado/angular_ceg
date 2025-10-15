@@ -7,10 +7,11 @@ import { Counter } from './counter/counter';
 import { Timer } from './timer/timer';
 import { ParentSignal } from './input-signal/parent-signal/parent-signal';
 import { Focus } from './focus/focus';
+import { Post } from './post/post';
 
 @Component({
   selector: 'app-root',
-  imports: [Calendar, Parent, ParentContent,Counter, Timer, ParentSignal, Focus],
+  imports: [Post, Calendar, Parent, ParentContent,Counter, Timer, ParentSignal, Focus],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
