@@ -1,0 +1,15 @@
+export function provideResource<T>(path: string) {
+  const token = new InjectionToken<ResourceService<T>>(
+    `ResourceService(${path})`, // ✅ Usa el path como identificador
+    {
+      providedIn: 'root',
+      factory: () => {
+        const http = inject(HttpClient);
+        const baseUrl = inject(BASE_URL);
+        return new ResourceService<T>(http, `${baseUrl}${path}`);
+      }
+    }
+  );
+
+  return token;
+}
