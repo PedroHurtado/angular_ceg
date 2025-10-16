@@ -23,11 +23,15 @@ export class Pizzalist {
   }
   private async loadData(){
     try{
+      //spinner.on
       const pizzas = await this.service.getAll()
       this.pizzas.set(pizzas)
     }
     catch(err){
       console.log(err)
+    }
+    finally{
+      //spinner off
     }
 
   }
