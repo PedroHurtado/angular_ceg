@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Calendar } from './calendar/calendar';
 import { Parent } from './input/parent/parent';
-import { Parent as ParentContent  } from './content/parent/parent'
+import { Parent as ParentContent } from './content/parent/parent'
 import { Counter } from './counter/counter';
 import { Timer } from './timer/timer';
 import { ParentSignal } from './input-signal/parent-signal/parent-signal';
@@ -10,25 +10,26 @@ import { Focus } from './focus/focus';
 import { Post } from './post/post';
 import { ParentContainer } from './parent-container/parent-container';
 import { Pizzalist } from './pizzas/pizzalist/pizzalist';
+import { Carrito } from './pizzas/carrito/carrito';
 
 @Component({
   selector: 'app-root',
-  imports: [Pizzalist, ParentContainer, Post, Calendar, Parent, ParentContent,Counter, Timer, ParentSignal, Focus],
+  imports: [Carrito, Pizzalist, ParentContainer, Post, Calendar, Parent, ParentContent, Counter, Timer, ParentSignal, Focus],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
-  name="Pedro Hurtado"
-  data:number[]=[]
-  getUser(){
+  name = "Pedro Hurtado"
+  data: number[] = []
+  getUser() {
     /*
       tenga cierta complejidad
       use and 'role' in admin
     */
     //return "user"
   }
-  handlerClick(ev:Event){
+  handlerClick(ev: Event) {
     ev.stopPropagation()
-    this.data.push(this.data.length+1)
+    this.data.push(this.data.length + 1)
   }
 }
