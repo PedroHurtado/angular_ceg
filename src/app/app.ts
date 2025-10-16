@@ -9,10 +9,11 @@ import { ParentSignal } from './input-signal/parent-signal/parent-signal';
 import { Focus } from './focus/focus';
 import { Post } from './post/post';
 import { ParentContainer } from './parent-container/parent-container';
+import { Pizzalist } from './pizzas/pizzalist/pizzalist';
 
 @Component({
   selector: 'app-root',
-  imports: [ParentContainer, Post, Calendar, Parent, ParentContent,Counter, Timer, ParentSignal, Focus],
+  imports: [Pizzalist, ParentContainer, Post, Calendar, Parent, ParentContent,Counter, Timer, ParentSignal, Focus],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
