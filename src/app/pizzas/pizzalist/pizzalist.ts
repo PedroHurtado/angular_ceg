@@ -1,6 +1,9 @@
 import { Component, signal, HostListener } from '@angular/core';
 import { Pizza } from '../pizza';
 import { Pizzaitem } from '../pizzaitem/pizzaitem';
+import { PizzaService } from '../pizzaservice';
+//import { catchError, of } from 'rxjs';
+//import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-pizzalist',
   imports: [Pizzaitem],
@@ -9,15 +12,31 @@ import { Pizzaitem } from '../pizzaitem/pizzaitem';
 })
 export class Pizzalist {
   pizzas = signal<Pizza[]>([])
+  constructor(private service: PizzaService) {
+    this.loadData()
+    /*this.service.getAll()
+      .pipe(
+        catchError(err => of<Pizza[]>([])),
+        takeUntilDestroyed()
+      )
+      .subscribe(pizzas => this.pizzas.set(pizzas))*/
+  }
+  private async loadData(){
+    try{
+      const pizzas = await this.service.getAll()
+      this.pizzas.set(pizzas)
+    }
+    catch(err){
+      console.log(err)
+    }
 
-
-  @HostListener('click',['$event'])
-  selectPizza(ev:Event){
-    ev.stopPropagation()
-    const {dataset}=(ev.target as HTMLElement)
-    if(dataset){
-      const {pizzaId} = dataset
-      console.log(pizzaId)
+  }
+  @HostListener('click', ['$event'])
+  selectPizza(ev: Event) {
+    ev.stopPropagation();
+    const { pizzaId } = (ev.target as HTMLElement).dataset || {}
+    if (pizzaId) {
+      console.log(pizzaId);
     }
   }
 }
