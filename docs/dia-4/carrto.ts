@@ -18,6 +18,7 @@ export class CartComponent {
     // ✅ Se desuscribe automáticamente cuando el componente se destruye
     this.cartService.items$
       .pipe(takeUntilDestroyed())
+
       .subscribe(items => {
         this.items = items;
         this.calculateTotals();
