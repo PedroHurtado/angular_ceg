@@ -2,9 +2,11 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChang
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
+import { Service } from './services/service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    Service,
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     //provideZoneChangeDetection({ eventCoalescing: true }),

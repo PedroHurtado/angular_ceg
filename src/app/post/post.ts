@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Postcoments } from './postcoments/postcoments';
+import { Service } from '../services/service';
 
 @Component({
   selector: 'app-post',
@@ -8,5 +9,8 @@ import { Postcoments } from './postcoments/postcoments';
   styleUrl: './post.css'
 })
 export class Post {
+    constructor(private service:Service){
+      console.log(service)
+    }
     elements:number [] = [...Array(100).keys()].map(i => i + 1);
 }
