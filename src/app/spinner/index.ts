@@ -1,2 +1,2 @@
 export {WithSpinner} from './decorator'
-export * from './spinnercomponent'
+export {SpinnerComponent} from './spinnercomponent'

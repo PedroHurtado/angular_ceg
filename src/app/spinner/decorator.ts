@@ -1,9 +1,4 @@
-// spinner-handler.interface.ts
-export interface SpinnerHandler {
-  spinnerOn(): void;
-  spinnerOff(): void;
-  handleError(error: unknown): void; // más descriptivo que "error"
-}
+import { SpinnerHandler } from "./spinnercomponent";
 
 // with-spinner.decorator.ts
 export function WithSpinner() {

@@ -3,10 +3,9 @@
 }
 @else{
   @for (pizza of pizzas(); track pizza.id) {
-    <app-pizzaitem [pizza]="pizza"/>
-}
+    <app-pizzaitem [pizza]="pizza" />
+  }
   @empty {
     <div>No existen pizzas</div>
   }
 }
-
