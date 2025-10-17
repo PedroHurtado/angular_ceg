@@ -14,9 +14,11 @@ import { SpinnerComponent, WithSpinner } from '../../spinner';
 })
 export class Pizzalist extends SpinnerComponent {
   override handleError(error: unknown): void {
-    throw new Error('Method not implemented.');
+    console.log(error)
   }
+
   pizzas = signal<Pizza[]>([])
+
   constructor(
     private service: PizzaService,
     private comunicationService :CommunicationService<Pizza>

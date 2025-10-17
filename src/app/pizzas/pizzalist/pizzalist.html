@@ -1,6 +1,12 @@
-@for (pizza of pizzas(); track pizza.id) {
+@if (loading()) {
+  <div>Loading.....</div>
+}
+@else{
+  @for (pizza of pizzas(); track pizza.id) {
     <app-pizzaitem [pizza]="pizza"/>
 }
-@empty {
-  <div>No existen pizzas</div>
+  @empty {
+    <div>No existen pizzas</div>
+  }
 }
+

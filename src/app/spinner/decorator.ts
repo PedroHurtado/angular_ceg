@@ -24,8 +24,9 @@ export function WithSpinner() {
         );
       }
 
-      handler.spinnerOn();
+
       try {
+        handler.spinnerOn();
         return await originalMethod.apply(this, args);
       } catch (error) {
         handler.handleError(error);
